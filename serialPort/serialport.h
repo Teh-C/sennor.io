@@ -5,7 +5,7 @@
 #include <QSerialPort>
 #include "serialconfiginfo.h"
 #include <QObject>
-
+#include <QTimer>
 class SerialPort : public QObject
 {
     Q_OBJECT
@@ -22,15 +22,20 @@ public:
 private:
     SerialConfigInfo *serialConfigInfo;
     QSerialPort serialPort;
+    QString strSum;
+
 
 
     void initSlots();
 private slots:
     void serialError(QSerialPort::SerialPortError error);
+    void receive_data(void);
 
 signals:
     void serialErrorOccurred();
     void serialNoError();
+    void serialReceiveDate(QString str);
+    void sendDealData(QString id, QString xAngle, QString yAngle, QString temp);
 };
 
 #endif // SERIALPORT_H

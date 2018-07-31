@@ -36,6 +36,11 @@ private:
 private slots:
     void openSerialBtn_clicked();
     void closeSerialBtn_clicked();
+    void dataFromSerial(QString str);
+    void angleFromSerial(QString id, QString xAngle, QString yAngle, QString temp);
+    void clearReveiceBtn_clicked();
+
+
 protected:
 
     virtual void mouseMoveEvent(QMouseEvent *event);

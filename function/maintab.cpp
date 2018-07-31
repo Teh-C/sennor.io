@@ -33,6 +33,7 @@ void MainTab::initUI()
     ui->sendWidget->setFixedHeight(60);
     ui->sendBtn->setText(tr("发送"));
     ui->sendClearBtn->setText(tr("清除发送"));
+    ui->clearReceiveBtn->setText(tr("清除接收"));
     ui->sendBtn->setFixedSize(60, 24);
     ui->sendClearBtn->setFixedSize(60, 24);
     ui->serialPortLabel->setText(tr("端口号："));
@@ -60,6 +61,8 @@ void MainTab::initUI()
     ui->openSerialBtn->setFixedWidth(80);
     ui->closeSerialBtn->setFixedWidth(80);
     ui->leftWidget->setFixedWidth(300);
+    ui->clearReceiveBtn->setFixedWidth(80);
+
 
     ui->closeSerialBtn->setVisible(false);
     ui->receiveTextEdit->setReadOnly(true);
@@ -101,6 +104,11 @@ void MainTab::initSlots()
     connect(ui->openSerialBtn, SIGNAL(clicked()), this, SLOT(openSerialBtn_clicked()));
     connect(ui->closeSerialBtn, SIGNAL(clicked()), this, SLOT(closeSerialBtn_clicked()));
     connect(serialPort, SIGNAL(serialErrorOccurred()), this, SLOT(closeSerialBtn_clicked()));
+    connect(serialPort, SIGNAL(serialReceiveDate(QString)), this, SLOT(dataFromSerial(QString)));
+    connect(serialPort, SIGNAL(sendDealData(QString,QString,QString,QString)),this,
+            SLOT(angleFromSerial(QString,QString,QString,QString)));
+
+    connect(ui->clearReceiveBtn, SIGNAL(clicked()), this, SLOT(clearReveiceBtn_clicked()));
 }
 
 
@@ -169,7 +177,6 @@ void MainTab::resetUI(bool isSerialOpen)
 }
 
 
-
 // 接口：refreshSerialPort
 // 描述：刷新串口端口信息
 void MainTab::refreshSerialPort()
@@ -208,4 +215,30 @@ void MainTab::mouseMoveEvent(QMouseEvent *event)
 
     }
     event->accept();
+}
+
+// 接口：dataFromSerial
+// 描述：从类SerialPort中提供的信号获取字符串数据
+void MainTab::dataFromSerial(QString str)
+{
+    ui->receiveTextEdit->moveCursor(QTextCursor::End);
+    ui->receiveTextEdit->insertPlainText(str);
+
+}
+
+// 接口：angleFromSerial
+// 描述：从类SerialPort中提供的信号获取角度值等
+void MainTab::angleFromSerial(QString id, QString xAngle, QString yAngle, QString temp)
+{
+    ui->idLineEdit->setText(id);
+    ui->xLineEdit->setText(xAngle);
+    ui->yLineEdit->setText(yAngle);
+    ui->tempLineEdit->setText(temp);
+}
+
+// 接口：clearReveiceBtn_clicked
+// 描述：槽函数，清除接收显示文本控件的内容
+void MainTab::clearReveiceBtn_clicked()
+{
+    ui->receiveTextEdit->clear();
 }

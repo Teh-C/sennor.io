@@ -17,7 +17,11 @@ QWidget#sendWidget
     background-color:#ffffff;
 }
 
-QToolButton#sendBtn,QToolButton#sendClearBtn,QPushButton#openSerialBtn,QPushButton#closeSerialBtn{
+QToolButton#sendBtn,
+QToolButton#sendClearBtn,
+QPushButton#openSerialBtn,
+QPushButton#closeSerialBtn,
+QPushButton#clearReceiveBtn{
     font-family:SimSun;
     font-size:12px;
     border-width:1px;
@@ -36,24 +40,41 @@ QPushButton#closeSerialBtn
     border-width:1px;
     border-style:solid;
     border-radius:3px;
-    border-color:#0db5c3;
+    border-color:#ED5565;
     height:24px;
     width:60px;
-    color:red;
+    color:#ED5565;
     background-color:#ffffff;
 }
 
 
-QToolButton#sendBtn::hover,QToolButton#sendClearBtn::hover,QPushButton#openSerialBtn::hover,QPushButton#closeSerialBtn::hover
+QToolButton#sendBtn::hover,
+QToolButton#sendClearBtn::hover,
+QPushButton#openSerialBtn::hover,
+QPushButton#clearReceiveBtn::hover
 {
     background-color:#0db5c3;
     color:#ffffff;
 }
-
-QToolButton#sendBtn::pressed,QToolButton#sendClearBtn::pressed,QPushButton#openSerialBtn::pressed,QPushButton#closeSerialBtn::pressed
+QPushButton#closeSerialBtn::hover
 {
-        background-color:#00a4b1;
+    background-color:#DA4453;
+    color:#ffffff;
+}
+
+QToolButton#sendBtn::pressed,
+QToolButton#sendClearBtn::pressed,
+QPushButton#openSerialBtn::pressed,
+QPushButton#clearReceiveBtn::pressed
+{
+    background-color:#00a4b1;
  }
+QPushButton#closeSerialBtn::pressed
+{
+    background-color:#c0392b;
+}
+
+
 
 QComboBox
 {
@@ -86,28 +107,7 @@ QTextEdit#sendTextEdit
     border-radius: 1px;
 }
 
-  QTabWidget::pane { /* The tab widget frame */
- 
-  
-  }
-  QTabWidget::tab-bar {
- 
-  }
-  QTabBar::tab {
- 
-  }
-  QTabBar::tab:selected, QTabBar::tab:hover {
-      background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                  stop: 0 #fafafa, stop: 0.4 #f4f4f4,
-                                  stop: 0.5 #e7e7e7, stop: 1.0 #fafafa);
-  }
-  QTabBar::tab:selected {
-      border-color: #0db5c3;
-      border-bottom-color: #C2C7CB; /* same as pane color */
-  }
-  QTabBar::tab:!selected {
-      margin-top: 2px; /* make non-selected tabs look smaller */
-  }
+
 
 
 

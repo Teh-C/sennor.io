@@ -1,6 +1,7 @@
 #include "serialport.h"
 #include <QMessageBox>
 #include <qDebug>
+#include <QByteArray>
 SerialPort::SerialPort(SerialConfigInfo *serialConfigInfo):
     serialConfigInfo(serialConfigInfo)
 {
@@ -62,6 +63,9 @@ void SerialPort::initSlots()
     #else
         connect(&serialPort, SIGNAL(errorOccurred(QSerialPort::SerialPortError)),this, SLOT(serialError(QSerialPort::SerialPortError)));
     #endif
+
+
+        connect(&serialPort, SIGNAL(readyRead()), this, SLOT(receive_data()));
 }
 
 // 接口：serialError
@@ -108,5 +112,49 @@ void SerialPort::serialError(QSerialPort::SerialPortError error)
             break;
         }
         emit serialErrorOccurred();
+    }
+}
+
+
+void SerialPort::receive_data(void)
+{
+    QByteArray buf = serialPort.readAll();
+    QString str=QString::fromLocal8Bit(buf);
+
+    str.replace(QString("\r"), QString(""));    // 去除'\r'，不然导致receveTedit显示空白行
+    emit serialReceiveDate(str);
+//    receiveTedit->setReadOnly(true);
+//    receiveTedit->moveCursor(QTextCursor::End);
+//    receiveTedit->insertPlainText(str);
+
+    if(strSum.length() < 40)
+        strSum = strSum + str;
+    else
+    {   int res = strSum.indexOf("$G",0);
+
+        if(res != -1)
+        {
+            QString r = strSum.mid(res, 20);
+            strSum.clear();
+            buf.clear();
+            buf = QByteArray(r.toLocal8Bit());
+//            get_sensor_id->setText(QString(r[2]));
+
+            // $G0+00165+00316+304+304
+
+            QString xAngle = r.mid(3, 6);
+            xAngle.insert(3, '.');
+            QString yAngle = r.mid(9, 6);
+            yAngle.insert(3, '.');
+            QString tempV = r.mid(15,4);
+            tempV.insert(3, '.');
+            sendDealData(QString(r[2]), xAngle, yAngle, tempV);
+
+//            ydegree->setText(yAngle);
+//            xdegree->setText(xAngle);
+//            xvalue = yAngle.toLocal8Bit();
+//            temperature->setText(tempV);
+        }
+        strSum.clear();
     }
 }

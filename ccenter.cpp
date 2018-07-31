@@ -28,6 +28,7 @@ void CCenter::initUI()
     mainLayout->addWidget(mainTab);
     ui->tab->setLayout(mainLayout);
     mainLayout->setContentsMargins(0,0,0,0);
+    AddFunWidget("hello", "what", new QWidget);
 }
 
 void CCenter::initSlot()
@@ -49,6 +50,7 @@ void CCenter::setPixmap(const QPixmap &pix)
 }
 
 
+// 描述：绘制Ccenter的背景
 void CCenter::paintEvent(QPaintEvent *e)
 {
     QPainter painter(this);
@@ -99,6 +101,8 @@ void CCenter::AddFunWidget(QString name, QString desc, QWidget *wgt)
    m_lstTabWidgetIndex.append(tab);
 }
 
+
+
 bool CCenter::WidgetIsExist(QString name)
 {
     for(int i = 0; i < m_lstTabWidgetIndex.count(); i++)
@@ -108,7 +112,6 @@ bool CCenter::WidgetIsExist(QString name)
         {
             return true;
         }
-
     }
     return false;
 }
