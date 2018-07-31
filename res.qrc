@@ -1,0 +1,56 @@
+<RCC>
+    <qresource prefix="/qss">
+        <file>m.css</file>
+    </qresource>
+    <qresource prefix="/ui">
+        <file>images/application.png</file>
+        <file>images/arr_down_cli.png</file>
+        <file>images/arr_down_hov.png</file>
+        <file>images/arr_down_nor.png</file>
+        <file>images/arr_up_cli.png</file>
+        <file>images/arr_up_hov.png</file>
+        <file>images/arr_up_nor.png</file>
+        <file>images/center_bg.png</file>
+        <file>images/fun1_cli.png</file>
+        <file>images/fun1_hov.png</file>
+        <file>images/fun1_nor.png</file>
+        <file>images/fun2_cli.png</file>
+        <file>images/fun2_hov.png</file>
+        <file>images/fun2_nor.png</file>
+        <file>images/fun3_cli.png</file>
+        <file>images/fun3_hov.png</file>
+        <file>images/fun3_nor.png</file>
+        <file>images/fun4_cli.png</file>
+        <file>images/fun4_hov.png</file>
+        <file>images/fun4_nor.png</file>
+        <file>images/fun5_cli.png</file>
+        <file>images/fun5_hov.png</file>
+        <file>images/fun5_nor.png</file>
+        <file>images/fun6_cli.png</file>
+        <file>images/fun6_hov.png</file>
+        <file>images/fun6_nor.png</file>
+        <file>images/fun7_cli.png</file>
+        <file>images/fun7_hov.png</file>
+        <file>images/fun7_nor.png</file>
+        <file>images/fun8_cli.png</file>
+        <file>images/fun8_hov.png</file>
+        <file>images/fun8_nor.png</file>
+        <file>images/help_cli.png</file>
+        <file>images/help_hov.png</file>
+        <file>images/help_nor.png</file>
+        <file>images/home_cli.png</file>
+        <file>images/home_hov.png</file>
+        <file>images/home_nor.png</file>
+        <file>images/nav_cli.png</file>
+        <file>images/nav_hov.png</file>
+        <file>images/nav_nor.png</file>
+        <file>images/quit_cli.png</file>
+        <file>images/quit_hov.png</file>
+        <file>images/quit_nor.png</file>
+        <file>images/top_area.png</file>
+        <file>images/top_bg.png</file>
+        <file>images/top_right.png</file>
+        <file>images/down_arrow.png</file>
+        <file>images/down_arrow.ico</file>
+    </qresource>
+</RCC>

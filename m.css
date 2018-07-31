@@ -1,0 +1,117 @@
+Menu{
+    background-color:white;
+}
+
+QWidget#btnWidget
+{
+    border-width:1px;
+    border-color:#BDC3C7;
+    border-style:solid;
+}
+QWidget#rightWidget,QWidget#leftWidget
+{
+    background-color:#f0f0f0;
+}
+QWidget#sendWidget
+{
+    background-color:#ffffff;
+}
+
+QToolButton#sendBtn,QToolButton#sendClearBtn,QPushButton#openSerialBtn,QPushButton#closeSerialBtn{
+    font-family:SimSun;
+    font-size:12px;
+    border-width:1px;
+    border-style:solid;
+    border-radius:3px;
+    border-color:#0db5c3;
+    height:24px;
+    width:60px;
+    color:#00a4b1;
+    background-color:#ffffff;
+}
+QPushButton#closeSerialBtn
+{
+    font-family:SimSun;
+    font-size:12px;
+    border-width:1px;
+    border-style:solid;
+    border-radius:3px;
+    border-color:#0db5c3;
+    height:24px;
+    width:60px;
+    color:red;
+    background-color:#ffffff;
+}
+
+
+QToolButton#sendBtn::hover,QToolButton#sendClearBtn::hover,QPushButton#openSerialBtn::hover,QPushButton#closeSerialBtn::hover
+{
+    background-color:#0db5c3;
+    color:#ffffff;
+}
+
+QToolButton#sendBtn::pressed,QToolButton#sendClearBtn::pressed,QPushButton#openSerialBtn::pressed,QPushButton#closeSerialBtn::pressed
+{
+        background-color:#00a4b1;
+ }
+
+QComboBox
+{
+    font-family:Microsoft Yahei;
+    height:20px;
+    border: 1px solid #0db5c3;
+    border-radius: 1px;
+    padding: 1px 2px 1px 2px;
+    min-width: 9em;
+}
+QComboBox::drop-down {
+    border-left-width: 1px;
+    border-left-color: #0db5c3;
+    border-left-style: solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+QComboBox::down-arrow {
+     image: url(:/ui/images/down_arrow.png);
+ }
+
+QLineEdit#yLineEdit,QLineEdit#xLineEdit,QLineEdit#tempLineEdit,
+QLineEdit#rateLineEdit,QLineEdit#idLineEdit,QTextEdit#receiveTextEdit,
+QTextEdit#sendTextEdit
+{
+    font-family:Microsoft Yahei;
+    height:20px;
+    border: 1px solid #0db5c3;
+    border-radius: 1px;
+}
+
+  QTabWidget::pane { /* The tab widget frame */
+ 
+  
+  }
+  QTabWidget::tab-bar {
+ 
+  }
+  QTabBar::tab {
+ 
+  }
+  QTabBar::tab:selected, QTabBar::tab:hover {
+      background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                  stop: 0 #fafafa, stop: 0.4 #f4f4f4,
+                                  stop: 0.5 #e7e7e7, stop: 1.0 #fafafa);
+  }
+  QTabBar::tab:selected {
+      border-color: #0db5c3;
+      border-bottom-color: #C2C7CB; /* same as pane color */
+  }
+  QTabBar::tab:!selected {
+      margin-top: 2px; /* make non-selected tabs look smaller */
+  }
+
+
+
+QMessageBox
+{
+    background-color:#f0f0f0;
+}
