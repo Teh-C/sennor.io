@@ -32,9 +32,13 @@ private:
     void SetPixMap(const QPixmap &pix);
 signals:
     void SigNavigation();
+    void signalHomeBtn_clicked();
+    void signalHelpBtn_clicked();
 
 private slots:
     void SlotNavigation();
+    void homeBtn_clicked();
+    void helpBtn_clicked();
 };
 
 #endif // STOPLEFT_H

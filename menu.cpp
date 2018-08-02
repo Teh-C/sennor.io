@@ -15,7 +15,7 @@ Menu::Menu(QWidget *parent) :
 Menu::~Menu()
 {
     delete ui;
-    QToolButton *btn;
+    QPushButton *btn;
     foreach (btn, toolBtnList) {
         delete btn;
     }
@@ -30,18 +30,18 @@ void Menu::menuInit()
     ui->btnUp->setText(QString::null);
     ui->btnUp->setCursor(QCursor(Qt::PointingHandCursor));
     ui->btnUp->setStyleSheet(
-                "QToolButton{border-image:url(:/ui/images/arr_up_nor);}"
-                "QToolButton::hover{border-image:url(:/ui/images/arr_up_hov);}"
-                "QToolButton::pressed{border-image:url(:/ui/images/arr_up_cli);}");
+                "QPushButton{border-image:url(:/ui/images/arr_up_nor);}"
+                "QPushButton:hover{border-image:url(:/ui/images/arr_up_hov);}"
+                "QPushButton:pressed{border-image:url(:/ui/images/arr_up_cli);}");
 
 
     ui->btnDown->setFixedSize(250,20);
     ui->btnDown->setText(QString::null);
     ui->btnDown->setCursor(QCursor(Qt::PointingHandCursor));
     ui->btnDown->setStyleSheet(
-                "QToolButton{border-image:url(:/ui/images/arr_down_nor);}"
-                "QToolButton::hover{border-image:url(:/ui/images/arr_down_hov);}"
-                "QToolButton::pressed{border-image:url(:/ui/images/arr_down_cli);}"
+                "QPushButton{border-image:url(:/ui/images/arr_down_nor);}"
+                "QPushButton:hover{border-image:url(:/ui/images/arr_down_hov);}"
+                "QPushButton:pressed{border-image:url(:/ui/images/arr_down_cli);}"
                 );
 
     QLayout *menuLayout = this->layout();
@@ -58,7 +58,7 @@ void Menu::slotInit()
     connect(ui->btnDown, SIGNAL(clicked()), this, SLOT(downBnt_clicked()));
 }
 
-QToolButton  *Menu::addNewToolBtn(QToolButton *btn,int w, int h, QString text, QString style)
+QPushButton  *Menu::addNewToolBtn(QPushButton *btn,int w, int h, QString text, QString style)
 {
     toolBtnList.append(btn);
     btn->setFixedSize(w, h);

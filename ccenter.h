@@ -31,6 +31,7 @@ public:
 
     void AddFunWidget(QString name, QString desc, QWidget *wgt);
     bool WidgetIsExist(QString name);
+    void setDefaultWidget();
 
 protected:
     void paintEvent(QPaintEvent *e);

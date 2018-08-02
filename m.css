@@ -1,3 +1,4 @@
+
 Menu{
     background-color:white;
 }
@@ -107,11 +108,11 @@ QTextEdit#sendTextEdit
     border-radius: 1px;
 }
 
-
-
-
-
 QMessageBox
 {
     background-color:#f0f0f0;
 }
+
+
+
+

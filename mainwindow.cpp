@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QLayout>
 #include <QDebug>
+#include <QPushButton>
 #include <./function/onesensor.h>
 #include <./function/doublesensor.h>
 MainWindow::MainWindow(QWidget *parent) :
@@ -45,62 +46,62 @@ void MainWindow::menuInit()
 {
     menu = new Menu(ui->centralWidget);
     menu->setCCenter(center);
-    QToolButton *toolBtn1 = menu->addNewToolBtn(new QToolButton,
+    QPushButton *toolBtn1 = menu->addNewToolBtn(new QPushButton,
                   240, 34,
                   QString::null,
-                  "QToolButton{border-image:url(:/ui/images/fun1_nor)}"
-                  "QToolButton::hover{border-image:url(:/ui/images/fun1_hov);}"
-                  "QToolButton::pressed{border-image:url(:/ui/images/fun1_cli);}"
+                  "QPushButton{border-image:url(:/ui/images/fun1_nor)}"
+                  "QPushButton::hover{border-image:url(:/ui/images/fun1_hov);}"
+                  "QPushButton::pressed{border-image:url(:/ui/images/fun1_cli);}"
                 );
 
-    QToolButton *toolBtn2 = menu->addNewToolBtn(new QToolButton,
+    QPushButton *toolBtn2 = menu->addNewToolBtn(new QPushButton,
                   240, 34,
                   QString::null,
-                  "QToolButton{border-image:url(:/ui/images/fun2_nor)}"
-                  "QToolButton::hover{border-image:url(:/ui/images/fun2_hov);}"
-                  "QToolButton::pressed{border-image:url(:/ui/images/fun2_cli);}"
+                  "QPushButton{border-image:url(:/ui/images/fun2_nor)}"
+                  "QPushButton::hover{border-image:url(:/ui/images/fun2_hov);}"
+                  "QPushButton::pressed{border-image:url(:/ui/images/fun2_cli);}"
                 );
-    QToolButton *toolBtn3 = menu->addNewToolBtn(new QToolButton,
+    QPushButton *toolBtn3 = menu->addNewToolBtn(new QPushButton,
                   240, 34,
                   QString::null,
-                  "QToolButton{border-image:url(:/ui/images/fun3_nor)}"
-                  "QToolButton::hover{border-image:url(:/ui/images/fun3_hov);}"
-                  "QToolButton::pressed{border-image:url(:/ui/images/fun3_cli);}"
+                  "QPushButton{border-image:url(:/ui/images/fun3_nor)}"
+                  "QPushButton::hover{border-image:url(:/ui/images/fun3_hov);}"
+                  "QPushButton::pressed{border-image:url(:/ui/images/fun3_cli);}"
                 );
-    QToolButton *toolBtn4 = menu->addNewToolBtn(new QToolButton,
+    QPushButton *toolBtn4 = menu->addNewToolBtn(new QPushButton,
                   240, 34,
                   QString::null,
-                  "QToolButton{border-image:url(:/ui/images/fun4_nor)}"
-                  "QToolButton::hover{border-image:url(:/ui/images/fun4_hov);}"
-                  "QToolButton::pressed{border-image:url(:/ui/images/fun4_cli);}"
+                  "QPushButton{border-image:url(:/ui/images/fun4_nor)}"
+                  "QPushButton::hover{border-image:url(:/ui/images/fun4_hov);}"
+                  "QPushButton::pressed{border-image:url(:/ui/images/fun4_cli);}"
                 );
-    QToolButton *toolBtn5 = menu->addNewToolBtn(new QToolButton,
+    QPushButton *toolBtn5 = menu->addNewToolBtn(new QPushButton,
                   240, 34,
                   QString::null,
-                  "QToolButton{border-image:url(:/ui/images/fun5_nor)}"
-                  "QToolButton::hover{border-image:url(:/ui/images/fun5_hov);}"
-                  "QToolButton::pressed{border-image:url(:/ui/images/fun5_cli);}"
+                  "QPushButton{border-image:url(:/ui/images/fun5_nor)}"
+                  "QPushButton::hover{border-image:url(:/ui/images/fun5_hov);}"
+                  "QPushButton::pressed{border-image:url(:/ui/images/fun5_cli);}"
                 );
-    QToolButton *toolBtn6 = menu->addNewToolBtn(new QToolButton,
+    QPushButton *toolBtn6 = menu->addNewToolBtn(new QPushButton,
                   240, 34,
                   QString::null,
-                  "QToolButton{border-image:url(:/ui/images/fun6_nor)}"
-                  "QToolButton::hover{border-image:url(:/ui/images/fun6_hov);}"
-                  "QToolButton::pressed{border-image:url(:/ui/images/fun6_cli);}"
+                  "QPushButton{border-image:url(:/ui/images/fun6_nor)}"
+                  "QPushButton::hover{border-image:url(:/ui/images/fun6_hov);}"
+                  "QPushButton::pressed{border-image:url(:/ui/images/fun6_cli);}"
                 );
-    QToolButton *toolBtn7 = menu-> addNewToolBtn(new QToolButton,
+    QPushButton *toolBtn7 = menu-> addNewToolBtn(new QPushButton,
                   240, 34,
                   QString::null,
-                  "QToolButton{border-image:url(:/ui/images/fun7_nor)}"
-                  "QToolButton::hover{border-image:url(:/ui/images/fun7_hov);}"
-                  "QToolButton::pressed{border-image:url(:/ui/images/fun7_cli);}"
+                  "QPushButton{border-image:url(:/ui/images/fun7_nor)}"
+                  "QPushButton::hover{border-image:url(:/ui/images/fun7_hov);}"
+                  "QPushButton::pressed{border-image:url(:/ui/images/fun7_cli);}"
                 );
-    QToolButton *toolBtn8 = menu->addNewToolBtn(new QToolButton,
+    QPushButton *toolBtn8 = menu->addNewToolBtn(new QPushButton,
                   240, 34,
                   QString::null,
-                  "QToolButton{border-image:url(:/ui/images/fun8_nor)}"
-                  "QToolButton::hover{border-image:url(:/ui/images/fun8_hov);}"
-                  "QToolButton::pressed{border-image:url(:/ui/images/fun8_cli);}");
+                  "QPushButton{border-image:url(:/ui/images/fun8_nor)}"
+                  "QPushButton::hover{border-image:url(:/ui/images/fun8_hov);}"
+                  "QPushButton::pressed{border-image:url(:/ui/images/fun8_cli);}");
 
     connect(toolBtn1, SIGNAL(clicked()), this, SLOT(Fun1()));
     connect(toolBtn2, SIGNAL(clicked()), this, SLOT(Fun2()));
@@ -124,6 +125,8 @@ void MainWindow::slotNavigation()
 void MainWindow::initSolt()
 {
     connect(topLeft, SIGNAL(SigNavigation()), this, SLOT(slotNavigation()));
+    connect(topLeft, SIGNAL(signalHelpBtn_clicked()), this, SLOT(dealSignalHelpBtn_clicked()));
+    connect(topLeft, SIGNAL(signalHomeBtn_clicked()), this, SLOT(dealSignalHomeBtn_clicked()));
 }
 
 
@@ -189,3 +192,14 @@ void MainWindow::Fun7(){}
 void MainWindow::Fun8(){}
 
 
+
+void MainWindow::dealSignalHelpBtn_clicked()
+{
+    center->AddFunWidget(tr("Help"), NULL, new QWidget);
+    menu->hide();
+}
+
+void MainWindow::dealSignalHomeBtn_clicked()
+{
+    center->setDefaultWidget();
+}

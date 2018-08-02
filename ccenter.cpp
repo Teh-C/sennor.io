@@ -27,6 +27,7 @@ void CCenter::initUI()
     mainTab = new MainTab(this);
     mainLayout->addWidget(mainTab);
     ui->tab->setLayout(mainLayout);
+
     mainLayout->setContentsMargins(0,0,0,0);
 }
 
@@ -64,7 +65,6 @@ void CCenter::SlotCurrentChanged(int index)
 
 
 }
-
 
 
 // 接口：SlotTabCloseRequested
@@ -124,4 +124,10 @@ bool CCenter::WidgetIsExist(QString name)
         }
     }
     return false;
+}
+
+
+void CCenter::setDefaultWidget()
+{
+    ui->tabWidget->setCurrentWidget(ui->tab);
 }

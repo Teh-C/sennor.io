@@ -77,6 +77,9 @@ void STopLeft::initUI()
 void STopLeft::initSlot()
 {
     connect(ui->m_btnNavigation, SIGNAL(clicked()), this, SLOT(SlotNavigation()));
+    connect(ui->m_btnHome, SIGNAL(clicked()), this, SLOT(homeBtn_clicked()));
+    connect(ui->m_btnHelp, SIGNAL(clicked()), this, SLOT(helpBtn_clicked()));
+
 }
 
 void STopLeft::SetPixMap(const QPixmap &pix)
@@ -101,4 +104,15 @@ QPoint STopLeft::GetNavigationPos()
 void STopLeft::SlotNavigation()
 {
    emit SigNavigation();
+}
+
+
+void STopLeft::helpBtn_clicked()
+{
+    emit signalHelpBtn_clicked();
+}
+
+void STopLeft::homeBtn_clicked()
+{
+    emit signalHomeBtn_clicked();
 }

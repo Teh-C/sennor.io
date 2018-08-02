@@ -3,7 +3,7 @@
 
 #include <QWidget>
 #include <QList>
-#include <QToolButton>
+#include <QPushButton>
 #include <ccenter.h>
 namespace Ui {
 class Menu;
@@ -18,7 +18,7 @@ public:
     ~Menu();
 
 
-    QToolButton *addNewToolBtn(QToolButton *btn,int w, int h, QString text, QString style);
+    QPushButton *addNewToolBtn(QPushButton *btn,int w, int h, QString text, QString style);
     void addNewSpacer();
     void setCCenter(CCenter *ccenter);
 private:
@@ -26,7 +26,7 @@ private:
     CCenter *ccenter;
     void menuInit();
     void slotInit();
-    QList<QToolButton *> toolBtnList;
+    QList<QPushButton *> toolBtnList;
 
     int moveIndex;
     int currentIndex;

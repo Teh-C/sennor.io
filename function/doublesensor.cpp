@@ -158,12 +158,18 @@ void DoubleSensor::GetAngleValue()
     QModelIndexList modelIndexList = itemSelectionModel->selectedIndexes();         // 获取选中区域
     if(modelIndexList.count() == 0)                                                 // 没有选中区域，则新建一行
     {
-        model->setItem(valueindex,1,new QStandardItem(mainTab->getSennorAngle_Y()));
+        if(yCheckBox->checkState() == Qt::Checked)
+            model->setItem(valueindex,1,new QStandardItem(mainTab->getSennorAngle_Y()));
+        else if(xCheckBox->checkState() == Qt::Checked)
+            model->setItem(valueindex,1,new QStandardItem(mainTab->getSennorAngle_X()));
         valueindex++;
     }
     else if(modelIndexList.count() == 1)                                            // 选中了某个单元格，给这个单元格填值
     {
-        model->setItem(modelIndexList.at(0).row(),modelIndexList.at(0).column(),new QStandardItem(mainTab->getSennorAngle_Y()));
+        if(yCheckBox->checkState() == Qt::Checked)
+            model->setItem(modelIndexList.at(0).row(),modelIndexList.at(0).column(),new QStandardItem(mainTab->getSennorAngle_Y()));
+        else if(xCheckBox->checkState() == Qt::Checked)
+            model->setItem(modelIndexList.at(0).row(),modelIndexList.at(0).column(),new QStandardItem(mainTab->getSennorAngle_X()));
         itemSelectionModel->clearSelection();                                       // 清除选择区域
     }
     else                                                                            // 选中了多个单元格，清除单元格
@@ -267,7 +273,11 @@ void DoubleSensor::countDiffValue()
 
 void DoubleSensor::SetKbValue()
 {
-    QString str="$TDGKB25,";
+    QString str="$TDGKB26,";
+    if(yCheckBox->checkState() == Qt::Checked)
+        str += "Y,";
+    else if(xCheckBox->checkState() == Qt::Checked)
+        str += "X,";
     QString kStr=klineedit->text();
     QString bStr=blineedit->text();
     if(kvalue > -10 && kvalue < 10 && bvalue > -10 && bvalue < 10)
@@ -296,7 +306,11 @@ void DoubleSensor::SetKbValue()
 
 void DoubleSensor::ResetKbValue()
 {
-    QString str="$TDINT\r\n";
+    QString str="$TDINT01";
+    if(yCheckBox->checkState() == Qt::Checked)
+        str += ",Y\r\n";
+    else if(xCheckBox->checkState() == Qt::Checked)
+        str += ",X\r\n";
     if(mainTab->sendStringToSennor(str) == false)
         QMessageBox::warning(this, tr("提示"), tr("串口可能未打开，请检查串口再进行校准。"), QMessageBox::Ok);
 }
