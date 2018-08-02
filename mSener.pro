@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui serialport
+QT       += core gui serialport sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -19,7 +19,9 @@ SOURCES += main.cpp\
     menu.cpp \
     ccenter.cpp \
     function/maintab.cpp \
-    serialPort/serialport.cpp
+    serialPort/serialport.cpp \
+    function/onesensor.cpp \
+    function/doublesensor.cpp
 
 HEADERS  += mainwindow.h \
     stopright.h \
@@ -28,14 +30,18 @@ HEADERS  += mainwindow.h \
     ccenter.h \
     function/maintab.h \
     serialPort/serialport.h \
-    serialPort/serialconfiginfo.h
+    serialPort/serialconfiginfo.h \
+    function/onesensor.h \
+    function/doublesensor.h
 
 FORMS    += mainwindow.ui \
     stopright.ui \
     stopleft.ui \
     menu.ui \
     ccenter.ui \
-    function/maintab.ui
+    function/maintab.ui \
+    function/onesensor.ui \
+    function/doublesensor.ui
 
 RESOURCES += \
     res.qrc

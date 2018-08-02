@@ -16,9 +16,8 @@ public:
 
     SerialConfigInfo::Serial_Err openSerial();
     void closeSerial();
-
     void setSerialConfigInfo(SerialConfigInfo *serialConfigInfo);
-
+    void sendStringToSerial(QString str);
 private:
     SerialConfigInfo *serialConfigInfo;
     QSerialPort serialPort;

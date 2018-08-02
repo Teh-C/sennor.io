@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QList>
 #include <QToolButton>
+#include <ccenter.h>
 namespace Ui {
 class Menu;
 }
@@ -17,11 +18,12 @@ public:
     ~Menu();
 
 
-    void addNewToolBtn(QToolButton *btn,int w, int h, QString text, QString style);
+    QToolButton *addNewToolBtn(QToolButton *btn,int w, int h, QString text, QString style);
     void addNewSpacer();
-
+    void setCCenter(CCenter *ccenter);
 private:
     Ui::Menu *ui;
+    CCenter *ccenter;
     void menuInit();
     void slotInit();
     QList<QToolButton *> toolBtnList;

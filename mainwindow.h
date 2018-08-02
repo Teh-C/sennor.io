@@ -27,6 +27,9 @@ protected:
     virtual void moveEvent(QMoveEvent *e);
     virtual void hideEvent(QHideEvent *e);
 
+    virtual void mousePressEvent(QMouseEvent *e);
+
+
 
 private:
     Ui::MainWindow  *ui;
@@ -41,9 +44,19 @@ private:
     void mainInit();
     void initSolt();
     void menuInit();
+    void MenuConnectCCenter();
 
 private slots:
     void slotNavigation();
+
+    void Fun1();
+    void Fun2();
+    void Fun3();
+    void Fun4();
+    void Fun5();
+    void Fun6();
+    void Fun7();
+    void Fun8();
 };
 
 #endif // MAINWINDOW_H

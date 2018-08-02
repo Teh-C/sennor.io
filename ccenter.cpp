@@ -28,7 +28,6 @@ void CCenter::initUI()
     mainLayout->addWidget(mainTab);
     ui->tab->setLayout(mainLayout);
     mainLayout->setContentsMargins(0,0,0,0);
-    AddFunWidget("hello", "what", new QWidget);
 }
 
 void CCenter::initSlot()
@@ -43,6 +42,8 @@ void CCenter::initSlot()
             SLOT(SlotCurrentChanged(int)));
 }
 
+
+// 描述：设置Pixmap
 void CCenter::setPixmap(const QPixmap &pix)
 {
     m_localPix = pix;
@@ -66,19 +67,25 @@ void CCenter::SlotCurrentChanged(int index)
 
 
 
+// 接口：SlotTabCloseRequested
+// 描述：关闭被选中的Tab对应的widget
 void CCenter::SlotTabCloseRequested(int index)
 {
     for(int i = 0; i < m_lstTabWidgetIndex.count(); i++)
     {
         if(m_lstTabWidgetIndex.at(i).name == ui->tabWidget->tabText(index))
         {
+            QWidget *wdg = m_lstTabWidgetIndex.at(i).wgt;
             m_lstTabWidgetIndex.removeAt(i);
             ui->tabWidget->removeTab(index);
+            delete wdg;
             break;
         }
     }
 }
 
+// 接口：AddFunWidget
+// 描述：添加一个FunWidget
 void CCenter::AddFunWidget(QString name, QString desc, QWidget *wgt)
 {
    for(int i = 0; i < m_lstTabWidgetIndex.count(); i++)
@@ -86,6 +93,7 @@ void CCenter::AddFunWidget(QString name, QString desc, QWidget *wgt)
        // 判断名字是否已经存在该widget
        if(m_lstTabWidgetIndex.at(i).name == name)
        {
+           delete wgt;
            ui->tabWidget->setCurrentWidget(m_lstTabWidgetIndex.at(i).wgt);
            ui->tabWidget->setTabText(ui->tabWidget->currentIndex(), m_lstTabWidgetIndex.at(i).name);
            return;
@@ -103,6 +111,8 @@ void CCenter::AddFunWidget(QString name, QString desc, QWidget *wgt)
 
 
 
+// 接口：WidgetIsExist
+// 描述：判断名为name的Widget是否存在列表中
 bool CCenter::WidgetIsExist(QString name)
 {
     for(int i = 0; i < m_lstTabWidgetIndex.count(); i++)

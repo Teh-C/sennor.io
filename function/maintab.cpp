@@ -230,6 +230,10 @@ void MainTab::dataFromSerial(QString str)
 // 描述：从类SerialPort中提供的信号获取角度值等
 void MainTab::angleFromSerial(QString id, QString xAngle, QString yAngle, QString temp)
 {
+    this->id = id;
+    this->xAngle = xAngle;
+    this->yAngle = yAngle;
+    this->temp = temp;
     ui->idLineEdit->setText(id);
     ui->xLineEdit->setText(xAngle);
     ui->yLineEdit->setText(yAngle);
@@ -241,4 +245,33 @@ void MainTab::angleFromSerial(QString id, QString xAngle, QString yAngle, QStrin
 void MainTab::clearReveiceBtn_clicked()
 {
     ui->receiveTextEdit->clear();
+}
+
+
+
+QString MainTab::getSennorAngle_ID()
+{
+    return id;
+}
+QString MainTab::getSennorAngle_X()
+{
+    return xAngle;
+}
+QString MainTab::getSennorAngle_Y()
+{
+    return yAngle;
+}
+QString MainTab::getSennorTemp()
+{
+    return temp;
+}
+
+bool MainTab::sendStringToSennor(QString str)
+{
+    if(serialStatus == true)
+    {
+        serialPort->sendStringToSerial(str);
+        return serialStatus;
+    }
+    return serialStatus;
 }

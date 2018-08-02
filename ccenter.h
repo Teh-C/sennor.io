@@ -27,7 +27,7 @@ public:
 public:
     explicit CCenter(QWidget *parent = 0);
     ~CCenter();
-
+    MainTab *mainTab;
 
     void AddFunWidget(QString name, QString desc, QWidget *wgt);
     bool WidgetIsExist(QString name);
@@ -43,7 +43,7 @@ private:
     QPixmap m_localPix;
     QList<struct stuTab> m_lstTabWidgetIndex;
 
-    MainTab *mainTab;
+
     QVBoxLayout *mainLayout;
 
 private slots:

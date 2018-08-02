@@ -22,8 +22,8 @@ void STopLeft::initUI()
     setFixedHeight(80);
     SetPixMap(QPixmap(":/ui/images/top_bg.png"));
 
-    ui->m_labelLogin->setText(tr("未登录"));
-    ui->m_labelNavigation->setText(tr("双轴传感器校准平台"));
+    ui->m_labelLogin->setText(tr("测试版"));
+    ui->m_labelNavigation->setText(tr("传感器校准平台"));
     ui->m_labelNavigation->setStyleSheet("font:22px; "
                                          "font-family: Microsoft Yahei;"
                                          "color: #FFFFFF"

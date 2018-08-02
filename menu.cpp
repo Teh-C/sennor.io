@@ -58,7 +58,7 @@ void Menu::slotInit()
     connect(ui->btnDown, SIGNAL(clicked()), this, SLOT(downBnt_clicked()));
 }
 
-void Menu::addNewToolBtn(QToolButton *btn,int w, int h, QString text, QString style)
+QToolButton  *Menu::addNewToolBtn(QToolButton *btn,int w, int h, QString text, QString style)
 {
     toolBtnList.append(btn);
     btn->setFixedSize(w, h);
@@ -68,6 +68,7 @@ void Menu::addNewToolBtn(QToolButton *btn,int w, int h, QString text, QString st
     ui->btnWidget->layout()->addWidget(btn);
     if(toolBtnList.count() > 8)
         btn->hide();
+    return btn;
 }
 
 void Menu::upBtn_clicked()
@@ -89,3 +90,10 @@ void Menu::downBnt_clicked()
         moveIndex++;
     }
 }
+
+
+void Menu::setCCenter(CCenter *ccenter)
+{
+    this->ccenter = ccenter;
+}
+

@@ -19,6 +19,11 @@ class MainTab : public QWidget
 public:
     explicit MainTab(QWidget *parent = 0);
     ~MainTab();
+    QString getSennorAngle_ID();
+    QString getSennorAngle_X();
+    QString getSennorAngle_Y();
+    QString getSennorTemp();
+    bool sendStringToSennor(QString str);
 
 private:
     Ui::MainTab *ui;
@@ -32,6 +37,12 @@ private:
 
     void resetUI(bool isSerialOpen);
     void refreshSerialPort();
+
+
+    QString id;
+    QString xAngle;
+    QString yAngle;
+    QString temp;
 
 private slots:
     void openSerialBtn_clicked();

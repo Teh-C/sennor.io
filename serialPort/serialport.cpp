@@ -149,12 +149,14 @@ void SerialPort::receive_data(void)
             QString tempV = r.mid(15,4);
             tempV.insert(3, '.');
             sendDealData(QString(r[2]), xAngle, yAngle, tempV);
-
-//            ydegree->setText(yAngle);
-//            xdegree->setText(xAngle);
-//            xvalue = yAngle.toLocal8Bit();
-//            temperature->setText(tempV);
         }
         strSum.clear();
     }
+}
+
+
+void SerialPort::sendStringToSerial(QString str)
+{
+        serialPort.write(str.toLocal8Bit());
+
 }
