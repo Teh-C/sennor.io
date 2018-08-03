@@ -72,7 +72,6 @@ void SerialPort::initSlots()
 // 描述：串口错误处理
 void SerialPort::serialError(QSerialPort::SerialPortError error)
 {
-    qDebug() << error;
     if(error != QSerialPort::NoError)
     {
         switch(error)

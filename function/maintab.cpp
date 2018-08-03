@@ -1,11 +1,9 @@
 #include "maintab.h"
 #include "ui_maintab.h"
 #include <QStringList>
-
 #include <QMessageBox>
 #include "./serialPort/serialconfiginfo.h"
 
-#include <QDebug>
 MainTab::MainTab(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MainTab),
@@ -130,8 +128,6 @@ void MainTab::openSerialBtn_clicked()
     {
         resetUI(true);
         serialStatus = true;
-
-        qDebug() << "true";
     }
 }
 

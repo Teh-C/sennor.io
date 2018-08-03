@@ -16,7 +16,7 @@
 #include <QSqlError>
 #include <QSettings>
 
-#include <QDebug>
+
 
 
 DoubleSensor::DoubleSensor(QWidget *parent) :

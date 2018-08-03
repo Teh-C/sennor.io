@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QLayout>
-#include <QDebug>
+
 #include <QPushButton>
 #include <./function/onesensor.h>
 #include <./function/doublesensor.h>

@@ -1,7 +1,7 @@
 #include "stopleft.h"
 #include "ui_stopleft.h"
 #include <QPainter>
-#include <QDebug>
+
 STopLeft::STopLeft(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::STopLeft)
