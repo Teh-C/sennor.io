@@ -50,6 +50,7 @@ private slots:
     void slotNavigation();
     void dealSignalHomeBtn_clicked();
     void dealSignalHelpBtn_clicked();
+    void dealSignalQuitBtn_clicked();
 
     void Fun1();
     void Fun2();

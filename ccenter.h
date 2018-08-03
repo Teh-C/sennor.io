@@ -50,6 +50,9 @@ private:
 private slots:
     void SlotCurrentChanged(int index);
     void SlotTabCloseRequested(int index);
+
+signals:
+    void CcenterCurrentChanged(QString name);
 };
 
 #endif // CCENTER_H

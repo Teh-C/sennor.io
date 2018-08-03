@@ -48,61 +48,70 @@ void MainWindow::menuInit()
     menu->setCCenter(center);
     QPushButton *toolBtn1 = menu->addNewToolBtn(new QPushButton,
                   240, 34,
-                  QString::null,
-                  "QPushButton{border-image:url(:/ui/images/fun1_nor)}"
-                  "QPushButton::hover{border-image:url(:/ui/images/fun1_hov);}"
-                  "QPushButton::pressed{border-image:url(:/ui/images/fun1_cli);}"
+                  tr("单轴传感器校准"),
+                  "QPushButton{border-image:url(:/ui/images/fun3_nor);color:#0089a0;font-size:13px;font-weight:bold;}"
+                  "QPushButton:hover{border-image:url(:/ui/images/fun3_hov);color:#e3f9fc;}"
+                  "QPushButton:pressed{border-image:url(:/ui/images/fun3_cli);color:#e8fdff;}"
                 );
 
     QPushButton *toolBtn2 = menu->addNewToolBtn(new QPushButton,
                   240, 34,
-                  QString::null,
-                  "QPushButton{border-image:url(:/ui/images/fun2_nor)}"
-                  "QPushButton::hover{border-image:url(:/ui/images/fun2_hov);}"
-                  "QPushButton::pressed{border-image:url(:/ui/images/fun2_cli);}"
+                  tr("双轴传感器校准"),
+                "QPushButton{border-image:url(:/ui/images/fun3_nor);color:#0089a0;font-size:13px;font-weight:bold;}"
+                "QPushButton:hover{border-image:url(:/ui/images/fun3_hov);color:#e3f9fc;}"
+                "QPushButton:pressed{border-image:url(:/ui/images/fun3_cli);color:#e8fdff;}"
                 );
     QPushButton *toolBtn3 = menu->addNewToolBtn(new QPushButton,
                   240, 34,
-                  QString::null,
-                  "QPushButton{border-image:url(:/ui/images/fun3_nor)}"
-                  "QPushButton::hover{border-image:url(:/ui/images/fun3_hov);}"
-                  "QPushButton::pressed{border-image:url(:/ui/images/fun3_cli);}"
+                 tr("数据图表分析"),
+                "QPushButton{border-image:url(:/ui/images/fun5_nor);color:#0089a0;font-size:13px;font-weight:bold;}"
+                "QPushButton:hover{border-image:url(:/ui/images/fun5_hov);color:#e3f9fc;}"
+                "QPushButton:pressed{border-image:url(:/ui/images/fun5_cli);color:#e8fdff;}"
                 );
     QPushButton *toolBtn4 = menu->addNewToolBtn(new QPushButton,
                   240, 34,
-                  QString::null,
-                  "QPushButton{border-image:url(:/ui/images/fun4_nor)}"
-                  "QPushButton::hover{border-image:url(:/ui/images/fun4_hov);}"
-                  "QPushButton::pressed{border-image:url(:/ui/images/fun4_cli);}"
+                  tr("测试1"),
+                "QPushButton{border-image:url(:/ui/images/fun1_nor);color:#0089a0;font-size:13px;font-weight:bold;}"
+                "QPushButton:hover{border-image:url(:/ui/images/fun1_hov);color:#e3f9fc;}"
+                "QPushButton:pressed{border-image:url(:/ui/images/fun1_cli);color:#e8fdff;}"
                 );
     QPushButton *toolBtn5 = menu->addNewToolBtn(new QPushButton,
                   240, 34,
-                  QString::null,
-                  "QPushButton{border-image:url(:/ui/images/fun5_nor)}"
-                  "QPushButton::hover{border-image:url(:/ui/images/fun5_hov);}"
-                  "QPushButton::pressed{border-image:url(:/ui/images/fun5_cli);}"
+                  tr("测试2"),
+                "QPushButton{border-image:url(:/ui/images/fun2_nor);color:#0089a0;font-size:13px;font-weight:bold;}"
+                "QPushButton:hover{border-image:url(:/ui/images/fun2_hov);color:#e3f9fc;}"
+                "QPushButton:pressed{border-image:url(:/ui/images/fun2_cli);color:#e8fdff;}"
                 );
     QPushButton *toolBtn6 = menu->addNewToolBtn(new QPushButton,
                   240, 34,
-                  QString::null,
-                  "QPushButton{border-image:url(:/ui/images/fun6_nor)}"
-                  "QPushButton::hover{border-image:url(:/ui/images/fun6_hov);}"
-                  "QPushButton::pressed{border-image:url(:/ui/images/fun6_cli);}"
+                  tr("测试3"),
+                "QPushButton{border-image:url(:/ui/images/fun3_nor);color:#0089a0;font-size:13px;font-weight:bold;}"
+                "QPushButton:hover{border-image:url(:/ui/images/fun3_hov);color:#e3f9fc;}"
+                "QPushButton:pressed{border-image:url(:/ui/images/fun3_cli);color:#e8fdff;}"
                 );
     QPushButton *toolBtn7 = menu-> addNewToolBtn(new QPushButton,
                   240, 34,
-                  QString::null,
-                  "QPushButton{border-image:url(:/ui/images/fun7_nor)}"
-                  "QPushButton::hover{border-image:url(:/ui/images/fun7_hov);}"
-                  "QPushButton::pressed{border-image:url(:/ui/images/fun7_cli);}"
+                  tr("测试4"),
+                 "QPushButton{border-image:url(:/ui/images/fun4_nor);color:#0089a0;font-size:13px;font-weight:bold;}"
+                 "QPushButton:hover{border-image:url(:/ui/images/fun4_hov);color:#e3f9fc;}"
+                 "QPushButton:pressed{border-image:url(:/ui/images/fun4_cli);color:#e8fdff;}"
                 );
     QPushButton *toolBtn8 = menu->addNewToolBtn(new QPushButton,
-                  240, 34,
-                  QString::null,
-                  "QPushButton{border-image:url(:/ui/images/fun8_nor)}"
-                  "QPushButton::hover{border-image:url(:/ui/images/fun8_hov);}"
-                  "QPushButton::pressed{border-image:url(:/ui/images/fun8_cli);}");
+                240, 34,
+                tr("测试5"),
+                "QPushButton{border-image:url(:/ui/images/fun6_nor);color:#0089a0;font-size:13px;font-weight:bold;}"
+                "QPushButton:hover{border-image:url(:/ui/images/fun6_hov);color:#e3f9fc;}"
+                "QPushButton:pressed{border-image:url(:/ui/images/fun6_cli);color:#e8fdff;}"
+                );
+    menu->addNewToolBtn(new QPushButton,
+                    240, 34,
+                    tr("测试6"),
+                    "QPushButton{border-image:url(:/ui/images/fun6_nor);color:#0089a0;font-size:13px;font-weight:bold;}"
+                    "QPushButton:hover{border-image:url(:/ui/images/fun6_hov);color:#e3f9fc;}"
+                    "QPushButton:pressed{border-image:url(:/ui/images/fun6_cli);color:#e8fdff;}"
+                    );
 
+    menu->addNewSpacer();
     connect(toolBtn1, SIGNAL(clicked()), this, SLOT(Fun1()));
     connect(toolBtn2, SIGNAL(clicked()), this, SLOT(Fun2()));
 }
@@ -127,6 +136,8 @@ void MainWindow::initSolt()
     connect(topLeft, SIGNAL(SigNavigation()), this, SLOT(slotNavigation()));
     connect(topLeft, SIGNAL(signalHelpBtn_clicked()), this, SLOT(dealSignalHelpBtn_clicked()));
     connect(topLeft, SIGNAL(signalHomeBtn_clicked()), this, SLOT(dealSignalHomeBtn_clicked()));
+    connect(topLeft, SIGNAL(signalquitBtn_clicked()), this, SLOT(dealSignalQuitBtn_clicked()));
+    connect(center, SIGNAL(CcenterCurrentChanged(QString)), topLeft, SLOT(setTitleText(QString)));
 }
 
 
@@ -174,13 +185,13 @@ void MainWindow::mousePressEvent(QMouseEvent *e)
 
 void MainWindow::Fun1(){
     OneSensor *oneSensor = new OneSensor;
-    center->AddFunWidget(tr("单轴校准"), NULL, oneSensor);
+    center->AddFunWidget(tr("单轴传感器校准"), NULL, oneSensor);
     oneSensor->setMainTab(center->mainTab);
     menu->hide();
 }
 void MainWindow::Fun2(){
     DoubleSensor *doubleSensor = new DoubleSensor;
-    center->AddFunWidget(tr("双轴校准"), NULL, doubleSensor);
+    center->AddFunWidget(tr("双轴传感器校准"), NULL, doubleSensor);
     doubleSensor->setMainTab(center->mainTab);
     menu->hide();
 }
@@ -195,11 +206,17 @@ void MainWindow::Fun8(){}
 
 void MainWindow::dealSignalHelpBtn_clicked()
 {
-    center->AddFunWidget(tr("Help"), NULL, new QWidget);
+    center->AddFunWidget(tr("帮助"), NULL, new QWidget);
     menu->hide();
 }
 
 void MainWindow::dealSignalHomeBtn_clicked()
 {
     center->setDefaultWidget();
+}
+
+
+void MainWindow::dealSignalQuitBtn_clicked()
+{
+     qApp->exit(0);
 }

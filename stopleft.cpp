@@ -79,6 +79,7 @@ void STopLeft::initSlot()
     connect(ui->m_btnNavigation, SIGNAL(clicked()), this, SLOT(SlotNavigation()));
     connect(ui->m_btnHome, SIGNAL(clicked()), this, SLOT(homeBtn_clicked()));
     connect(ui->m_btnHelp, SIGNAL(clicked()), this, SLOT(helpBtn_clicked()));
+    connect(ui->m_btnQuit, SIGNAL(clicked()), this, SLOT(quitBtn_clicked()));
 
 }
 
@@ -115,4 +116,14 @@ void STopLeft::helpBtn_clicked()
 void STopLeft::homeBtn_clicked()
 {
     emit signalHomeBtn_clicked();
+}
+void STopLeft::quitBtn_clicked()
+{
+    emit signalquitBtn_clicked();
+}
+
+
+void STopLeft::setTitleText(QString name)
+{
+    ui->m_labelNavigation->setText(name);
 }

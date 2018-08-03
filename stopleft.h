@@ -34,11 +34,14 @@ signals:
     void SigNavigation();
     void signalHomeBtn_clicked();
     void signalHelpBtn_clicked();
+    void signalquitBtn_clicked();
 
 private slots:
     void SlotNavigation();
     void homeBtn_clicked();
     void helpBtn_clicked();
+    void quitBtn_clicked();
+    void setTitleText(QString name);
 };
 
 #endif // STOPLEFT_H

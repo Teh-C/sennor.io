@@ -70,7 +70,11 @@ QPushButton  *Menu::addNewToolBtn(QPushButton *btn,int w, int h, QString text, Q
         btn->hide();
     return btn;
 }
+void Menu::addNewSpacer()
+{
+    ((QVBoxLayout *)ui->btnWidget->layout())->addStretch();
 
+}
 void Menu::upBtn_clicked()
 {
     if(moveIndex > 0)

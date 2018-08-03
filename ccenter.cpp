@@ -1,6 +1,7 @@
 #include "ccenter.h"
 #include "ui_ccenter.h"
 #include <QPainter>
+#include <QDebug>
 CCenter::CCenter(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::CCenter)
@@ -63,6 +64,7 @@ void CCenter::paintEvent(QPaintEvent *e)
 void CCenter::SlotCurrentChanged(int index)
 {
 
+    CcenterCurrentChanged(ui->tabWidget->tabText(index));
 
 }
 
